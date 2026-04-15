@@ -46,10 +46,9 @@ Produces a business-ready summary table grouped by pickup hour and payment metho
 - 72 aggregated gold layer rows covering all hours and payment types
 - Pipeline scheduled to run automatically every month via Airflow
 
----
-
 ## Project Structure
 
+```
 nyc-taxi-etl/
 ├── ingest.py                        # Downloads and uploads raw data to bronze
 ├── airflow/
@@ -59,8 +58,7 @@ nyc-taxi-etl/
 │   ├── Dockerfile                   # Custom image with PySpark and Azure libraries
 │   └── requirements.txt             # Python dependencies
 └── .gitignore
-
----
+```
 
 ## How to Run
 
