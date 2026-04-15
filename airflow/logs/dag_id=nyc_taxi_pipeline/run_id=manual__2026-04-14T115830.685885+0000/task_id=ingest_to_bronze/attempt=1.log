@@ -1,0 +1,109 @@
+[2026-04-14T11:58:36.245+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nyc_taxi_pipeline.ingest_to_bronze manual__2026-04-14T11:58:30.685885+00:00 [queued]>
+[2026-04-14T11:58:36.293+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nyc_taxi_pipeline.ingest_to_bronze manual__2026-04-14T11:58:30.685885+00:00 [queued]>
+[2026-04-14T11:58:36.297+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-04-14T11:58:36.392+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ingest_to_bronze> on 2026-04-14 11:58:30.685885+00:00
+[2026-04-14T11:58:36.423+0000] {standard_task_runner.py:60} INFO - Started process 301 to run task
+[2026-04-14T11:58:36.452+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'nyc_taxi_pipeline', 'ingest_to_bronze', 'manual__2026-04-14T11:58:30.685885+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_dag.py', '--cfg-path', '/tmp/tmp2ew96a5j']
+[2026-04-14T11:58:36.471+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask ingest_to_bronze
+[2026-04-14T11:58:36.835+0000] {task_command.py:423} INFO - Running <TaskInstance: nyc_taxi_pipeline.ingest_to_bronze manual__2026-04-14T11:58:30.685885+00:00 [running]> on host 8ac850d04d14
+[2026-04-14T11:58:37.195+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='divyansh' AIRFLOW_CTX_DAG_ID='nyc_taxi_pipeline' AIRFLOW_CTX_TASK_ID='ingest_to_bronze' AIRFLOW_CTX_EXECUTION_DATE='2026-04-14T11:58:30.685885+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-14T11:58:30.685885+00:00'
+[2026-04-14T11:58:37.206+0000] {logging_mixin.py:188} INFO - Downloading NYC Taxi data...
+[2026-04-14T11:58:53.356+0000] {_universal.py:514} INFO - Request URL: 'https://divyanshpipelinedata.dfs.core.windows.net/bronze/yellow_taxi_2024-01.parquet?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4ecb7d1c-37f9-11f1-b5fc-0242ac130003'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-04-14T11:58:53.750+0000] {_universal.py:550} INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Tue, 14 Apr 2026 11:58:51 GMT'
+    'ETag': '"0x8DE9A1D322FDEEC"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '941c7a84-b01f-0053-3906-cc7f10000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '4ecb7d1c-37f9-11f1-b5fc-0242ac130003'
+    'Date': 'Tue, 14 Apr 2026 11:58:51 GMT'
+    'Content-Length': '0'
+[2026-04-14T11:58:53.760+0000] {_universal.py:511} INFO - Request URL: 'https://divyanshpipelinedata.dfs.core.windows.net/bronze/yellow_taxi_2024-01.parquet?action=REDACTED&position=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'Content-Length': '49961641'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/json'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4f0938aa-37f9-11f1-b5fc-0242ac130003'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2026-04-14T11:58:59.047+0000] {_universal.py:550} INFO - Response status: 202
+Response headers:
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '941c7a8d-b01f-0053-4206-cc7f10000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '4f0938aa-37f9-11f1-b5fc-0242ac130003'
+    'Date': 'Tue, 14 Apr 2026 11:58:57 GMT'
+    'Content-Length': '0'
+[2026-04-14T11:58:59.055+0000] {_universal.py:514} INFO - Request URL: 'https://divyanshpipelinedata.dfs.core.windows.net/bronze/yellow_taxi_2024-01.parquet?action=REDACTED&position=REDACTED&close=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'If-Match': '"0x8DE9A1D322FDEEC"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '52314aa4-37f9-11f1-b5fc-0242ac130003'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-04-14T11:58:59.114+0000] {_universal.py:550} INFO - Response status: 412
+Response headers:
+    'Content-Length': '200'
+    'Content-Type': 'application/json;charset=utf-8'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-error-code': 'ConditionNotMet'
+    'x-ms-request-id': '941c7e6b-b01f-0053-1406-cc7f10000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '52314aa4-37f9-11f1-b5fc-0242ac130003'
+    'Date': 'Tue, 14 Apr 2026 11:58:57 GMT'
+[2026-04-14T11:58:59.154+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/pipeline_dag.py", line 33, in ingest
+    file_client.upload_data(f.read(), overwrite=True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/azure/core/tracing/decorator.py", line 78, in wrapper_use_tracer
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/azure/storage/filedatalake/_data_lake_file_client.py", line 482, in upload_data
+    return upload_datalake_file(**options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/azure/storage/filedatalake/_upload_helper.py", line 105, in upload_datalake_file
+    process_storage_error(error)
+  File "/home/airflow/.local/lib/python3.8/site-packages/azure/storage/filedatalake/_deserialize.py", line 221, in process_storage_error
+    exec("raise error from None")   # pylint: disable=exec-used # nosec
+  File "<string>", line 1, in <module>
+azure.core.exceptions.ResourceModifiedError: (ConditionNotMet) The condition specified using HTTP conditional header(s) is not met.
+RequestId:941c7e6b-b01f-0053-1406-cc7f10000000
+Time:2026-04-14T11:58:57.3665455Z
+Code: ConditionNotMet
+Message: The condition specified using HTTP conditional header(s) is not met.
+RequestId:941c7e6b-b01f-0053-1406-cc7f10000000
+Time:2026-04-14T11:58:57.3665455Z
+[2026-04-14T11:58:59.295+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=nyc_taxi_pipeline, task_id=ingest_to_bronze, execution_date=20260414T115830, start_date=20260414T115836, end_date=20260414T115859
+[2026-04-14T11:58:59.431+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 3 for task ingest_to_bronze ((ConditionNotMet) The condition specified using HTTP conditional header(s) is not met.
+RequestId:941c7e6b-b01f-0053-1406-cc7f10000000
+Time:2026-04-14T11:58:57.3665455Z
+Code: ConditionNotMet
+Message: The condition specified using HTTP conditional header(s) is not met.
+RequestId:941c7e6b-b01f-0053-1406-cc7f10000000
+Time:2026-04-14T11:58:57.3665455Z; 301)
+[2026-04-14T11:58:59.520+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-04-14T11:58:59.722+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

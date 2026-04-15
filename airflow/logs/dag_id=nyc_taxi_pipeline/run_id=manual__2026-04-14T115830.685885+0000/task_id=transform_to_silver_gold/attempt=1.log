@@ -1,0 +1,340 @@
+[2026-04-14T12:04:25.362+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nyc_taxi_pipeline.transform_to_silver_gold manual__2026-04-14T11:58:30.685885+00:00 [queued]>
+[2026-04-14T12:04:25.429+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nyc_taxi_pipeline.transform_to_silver_gold manual__2026-04-14T11:58:30.685885+00:00 [queued]>
+[2026-04-14T12:04:25.433+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-04-14T12:04:25.592+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform_to_silver_gold> on 2026-04-14 11:58:30.685885+00:00
+[2026-04-14T12:04:25.630+0000] {standard_task_runner.py:60} INFO - Started process 511 to run task
+[2026-04-14T12:04:25.670+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'nyc_taxi_pipeline', 'transform_to_silver_gold', 'manual__2026-04-14T11:58:30.685885+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_dag.py', '--cfg-path', '/tmp/tmp3d34kidb']
+[2026-04-14T12:04:25.696+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask transform_to_silver_gold
+[2026-04-14T12:04:26.099+0000] {task_command.py:423} INFO - Running <TaskInstance: nyc_taxi_pipeline.transform_to_silver_gold manual__2026-04-14T11:58:30.685885+00:00 [running]> on host 8ac850d04d14
+[2026-04-14T12:04:26.855+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='divyansh' AIRFLOW_CTX_DAG_ID='nyc_taxi_pipeline' AIRFLOW_CTX_TASK_ID='transform_to_silver_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-04-14T11:58:30.685885+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-14T11:58:30.685885+00:00'
+[2026-04-14T12:04:26.867+0000] {logging_mixin.py:188} INFO - Starting transformation...
+[2026-04-14T12:04:26.948+0000] {_universal.py:514} INFO - Request URL: 'https://divyanshpipelinedata.blob.core.windows.net/bronze/yellow_taxi_2024-01.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '15a1644c-37fa-11f1-92bf-0242ac130003'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-04-14T12:04:27.821+0000] {_universal.py:550} INFO - Response status: 206
+Response headers:
+    'Content-Length': '33554432'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 14 Apr 2026 12:04:17 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE9A1DF40A253C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c418db88-001e-009d-1d06-ccae9e000000'
+    'x-ms-client-request-id': '15a1644c-37fa-11f1-92bf-0242ac130003'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-access-tier': 'REDACTED'
+    'x-ms-access-tier-inferred': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Tue, 14 Apr 2026 12:04:25 GMT'
+[2026-04-14T12:04:37.059+0000] {_universal.py:514} INFO - Request URL: 'https://divyanshpipelinedata.blob.core.windows.net/bronze/yellow_taxi_2024-01.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'If-Match': '"0x8DE9A1DF40A253C"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '1ba898ec-37fa-11f1-92bf-0242ac130003'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-04-14T12:04:37.371+0000] {_universal.py:550} INFO - Response status: 206
+Response headers:
+    'Content-Length': '4194304'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 14 Apr 2026 12:04:17 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE9A1DF40A253C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c419039d-001e-009d-4806-ccae9e000000'
+    'x-ms-client-request-id': '1ba898ec-37fa-11f1-92bf-0242ac130003'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-access-tier': 'REDACTED'
+    'x-ms-access-tier-inferred': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Tue, 14 Apr 2026 12:04:35 GMT'
+[2026-04-14T12:04:38.027+0000] {_universal.py:514} INFO - Request URL: 'https://divyanshpipelinedata.blob.core.windows.net/bronze/yellow_taxi_2024-01.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'If-Match': '"0x8DE9A1DF40A253C"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '1c3c5e88-37fa-11f1-92bf-0242ac130003'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-04-14T12:04:38.135+0000] {_universal.py:550} INFO - Response status: 206
+Response headers:
+    'Content-Length': '4194304'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 14 Apr 2026 12:04:17 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE9A1DF40A253C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c41908f4-001e-009d-3406-ccae9e000000'
+    'x-ms-client-request-id': '1c3c5e88-37fa-11f1-92bf-0242ac130003'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-access-tier': 'REDACTED'
+    'x-ms-access-tier-inferred': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Tue, 14 Apr 2026 12:04:36 GMT'
+[2026-04-14T12:04:39.322+0000] {_universal.py:514} INFO - Request URL: 'https://divyanshpipelinedata.blob.core.windows.net/bronze/yellow_taxi_2024-01.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'If-Match': '"0x8DE9A1DF40A253C"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '1d01fad0-37fa-11f1-92bf-0242ac130003'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-04-14T12:04:39.461+0000] {_universal.py:550} INFO - Response status: 206
+Response headers:
+    'Content-Length': '4194304'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 14 Apr 2026 12:04:17 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE9A1DF40A253C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c4190f8e-001e-009d-0706-ccae9e000000'
+    'x-ms-client-request-id': '1d01fad0-37fa-11f1-92bf-0242ac130003'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-access-tier': 'REDACTED'
+    'x-ms-access-tier-inferred': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Tue, 14 Apr 2026 12:04:37 GMT'
+[2026-04-14T12:04:40.659+0000] {_universal.py:514} INFO - Request URL: 'https://divyanshpipelinedata.blob.core.windows.net/bronze/yellow_taxi_2024-01.parquet'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'If-Match': '"0x8DE9A1DF40A253C"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.14.0 Python/3.8.18 (Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.34)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '1dcdf4a0-37fa-11f1-92bf-0242ac130003'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2026-04-14T12:04:40.835+0000] {_universal.py:550} INFO - Response status: 206
+Response headers:
+    'Content-Length': '3824297'
+    'Content-Type': 'application/octet-stream'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Tue, 14 Apr 2026 12:04:17 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DE9A1DF40A253C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'c4191570-001e-009d-2b06-ccae9e000000'
+    'x-ms-client-request-id': '1dcdf4a0-37fa-11f1-92bf-0242ac130003'
+    'x-ms-version': 'REDACTED'
+    'x-ms-resource-type': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'x-ms-access-tier': 'REDACTED'
+    'x-ms-access-tier-inferred': 'REDACTED'
+    'x-ms-owner': 'REDACTED'
+    'x-ms-group': 'REDACTED'
+    'x-ms-permissions': 'REDACTED'
+    'x-ms-acl': 'REDACTED'
+    'Date': 'Tue, 14 Apr 2026 12:04:38 GMT'
+[2026-04-14T12:06:07.812+0000] {job.py:213} ERROR - Job heartbeat got an exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/jobs/job.py", line 187, in heartbeat
+    self._merge_from(Job._fetch_from_db(self, session))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/api_internal/internal_api_call.py", line 114, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/jobs/job.py", line 308, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 691, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-04-14T12:06:28.839+0000] {job.py:221} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-14T12:06:53.420+0000] {job.py:221} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2026-04-14T12:24:04.908+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-04-14T12:24:06.010+0000] {process_utils.py:131} INFO - Sending 15 to group 511. PIDs of all processes in the group: [569, 511]
+[2026-04-14T12:24:06.068+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 511
+[2026-04-14T12:24:06.149+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-04-14T12:24:09.924+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/pipeline_dag.py", line 46, in transform
+    df["trip_duration_mins"] = (df["tpep_dropoff_datetime"] - df["tpep_pickup_datetime"]).dt.total_seconds() / 60
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 1440, in createDataFrame
+    return super(SparkSession, self).createDataFrame(  # type: ignore[call-overload]
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/pandas/conversion.py", line 363, in createDataFrame
+    return self._create_dataframe(converted_data, schema, samplingRatio, verifySchema)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 1485, in _create_dataframe
+    rdd, struct = self._createFromLocal(map(prepare, data), schema)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 1093, in _createFromLocal
+    struct = self._inferSchemaFromList(data, names=schema)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 955, in _inferSchemaFromList
+    schema = reduce(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 958, in <genexpr>
+    _infer_schema(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/types.py", line 1693, in _infer_schema
+    StructField(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/types.py", line 687, in __init__
+    self.nullable = nullable
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2026-04-14T12:24:10.274+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=nyc_taxi_pipeline, task_id=transform_to_silver_gold, execution_date=20260414T115830, start_date=20260414T120425, end_date=20260414T122410
+[2026-04-14T12:24:11.045+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 10 for task transform_to_silver_gold (Task received SIGTERM signal; 511)
+[2026-04-14T12:24:11.401+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=569, status='terminated', started='12:04:49') (569) terminated with exit code None
+[2026-04-14T12:24:12.055+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=511, status='terminated', exitcode=1, started='12:04:25') (511) terminated with exit code 1
+[2026-04-14T12:24:12.085+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2026-04-14T12:24:12.938+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

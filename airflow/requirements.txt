@@ -1,0 +1,6 @@
+apache-airflow-providers-common-sql
+pyarrow
+pyspark
+azure-storage-file-datalake
+azure-storage-blob
+pandas
